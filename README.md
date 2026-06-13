@@ -134,3 +134,24 @@ php artisan test
 ## Entrega esperada
 
 El estudiante debe trabajar sobre su propio fork del repositorio y entregar en Canvas el enlace al repositorio forkeado, junto con una breve descripción del módulo implementado y los commits principales que evidencian su avance.
+
+
+# modulo 19: Ordenes de Laboratorio
+Este modulo permite la creacion de ordenes medicas asociando pacientesy examenes, asi como la consulta e las mismas mediante filtros de ID y fechas.
+
+## Cómo Revisar la Solución (Módulo 19)
+
+Para verificar el correcto funcionamiento del módulo de **Órdenes de Laboratorio**, se han habilitado y probado los flujos de comunicación siguiendo la arquitectura limpia del proyecto:
+
+### 1. Prueba de Creación de Orden
+Para registrar una nueva solicitud en el sistema, realice una petición HTTP **POST** utilizando su cliente de pruebas de API (como Postman o Thunder Client):
+
+* **Ruta del Endpoint:** `POST /api/ordenes`
+* **Cuerpo de la Petición (JSON):**
+```json
+{
+  "num_historia_clinica": "PAC-8492",
+  "id_medico": "MED-302",
+  "prioridad": "Urgente",
+  "examenes": ["E-01", "E-05"]
+}
